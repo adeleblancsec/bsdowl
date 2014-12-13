@@ -1,7 +1,7 @@
-### Makefile -- Test Suite for OCaml
+### Makefile -- Test extra features of OCaml
 
 # Author: Michael Grünewald
-# Date: Fri Oct 17 13:50:39 CEST 2014
+# Date: Tue Dec  9 23:27:15 CET 2014
 
 # BSD Owl Scripts (https://github.com/michipili/bsdowl)
 # This file is part of BSD Owl Scripts
@@ -14,13 +14,8 @@
 # are also available at
 # http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.txt
 
+TEST=	TestPpxDeriving
 
-SUBDIR=		test_program
-SUBDIR+=	test_library
-SUBDIR+=	test_complex
-SUBDIR+=	test_toplevel
-SUBDIR+=	test_extra
-
-.include "generic.subdir.mk"
+.include "bsdowl.test.mk"
 
 ### End of file `Makefile'

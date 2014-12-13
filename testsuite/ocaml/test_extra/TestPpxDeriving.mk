@@ -1,7 +1,7 @@
-### Makefile -- Test Suite for OCaml
+### TestPpxDeriving.mk -- Example using PPX deriving
 
 # Author: Michael Grünewald
-# Date: Fri Oct 17 13:50:39 CEST 2014
+# Date: Tue Dec  9 23:20:22 CET 2014
 
 # BSD Owl Scripts (https://github.com/michipili/bsdowl)
 # This file is part of BSD Owl Scripts
@@ -14,13 +14,18 @@
 # are also available at
 # http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.txt
 
+PROGRAM=	point
 
-SUBDIR=		test_program
-SUBDIR+=	test_library
-SUBDIR+=	test_complex
-SUBDIR+=	test_toplevel
-SUBDIR+=	test_extra
+SRCS=		point.ml
+SRCS+=		main.ml
 
-.include "generic.subdir.mk"
+EXTERNAL=	ocaml.findlib:ppx_deriving
+EXTERNAL+=	ocaml.findlib:ppx_deriving.std
 
-### End of file `Makefile'
+test:
+	test -x ${DESTDIR}${BINDIR}/point
+	${DESTDIR}${BINDIR}/point
+
+.include "ocaml.prog.mk"
+
+### End of file `TestPpxDeriving.mk'
