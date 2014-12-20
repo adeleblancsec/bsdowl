@@ -1,7 +1,7 @@
-### Makefile -- Test Suite
+### Makefile -- Developement of applications with C
 
 # Author: Michael Grünewald
-# Date: Fri Oct 17 13:50:39 CEST 2014
+# Date: Fri Nov  7 08:53:47 CET 2014
 
 # BSD Owl Scripts (https://github.com/michipili/bsdowl)
 # This file is part of BSD Owl Scripts
@@ -14,18 +14,9 @@
 # are also available at
 # http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.txt
 
+SHARE+=			langc++.build.mk
+SHARE+=			langc++.prog.mk
 
-SUBDIR=		bsdmake
-SUBDIR+=	ocaml
-SUBDIR+=	langc
-SUBDIR+=	langc++
-SUBDIR+=	script
-SUBDIR+=	config
-SUBDIR+=	texmf
-
-all configure install build depend doc:
-	${NOP}
-
-.include "generic.subdir.mk"
+.include "generic.files.mk"
 
 ### End of file `Makefile'

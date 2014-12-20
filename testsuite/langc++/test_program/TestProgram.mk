@@ -1,7 +1,7 @@
-### Makefile -- Test Suite
+### TestProgram.mk -- The obnoxious hello world program
 
 # Author: Michael Grünewald
-# Date: Fri Oct 17 13:50:39 CEST 2014
+# Date: Fri Nov  7 10:16:01 CET 2014
 
 # BSD Owl Scripts (https://github.com/michipili/bsdowl)
 # This file is part of BSD Owl Scripts
@@ -14,18 +14,12 @@
 # are also available at
 # http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.txt
 
+PROGRAM=		hello_world
 
-SUBDIR=		bsdmake
-SUBDIR+=	ocaml
-SUBDIR+=	langc
-SUBDIR+=	langc++
-SUBDIR+=	script
-SUBDIR+=	config
-SUBDIR+=	texmf
+test:
+	test -x ${DESTDIR}${BINDIR}/hello_world
+	test -f ${DESTDIR}${MANDIR}/man1/hello_world.1.gz
 
-all configure install build depend doc:
-	${NOP}
+.include "langc++.prog.mk"
 
-.include "generic.subdir.mk"
-
-### End of file `Makefile'
+### End of file `TestProgram.mk'

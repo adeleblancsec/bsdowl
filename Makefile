@@ -22,6 +22,7 @@ SUBDIR+=		bps
 SUBDIR+=		ocaml
 SUBDIR+=		texmf
 SUBDIR+=		langc
+SUBDIR+=		langc++
 SUBDIR+=		noweb
 SUBDIR+=		config
 SUBDIR+=		script
