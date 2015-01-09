@@ -1,7 +1,7 @@
-### Makefile -- Test Suite for OCaml
+### Makfile -- A heat-generating rational airthmetic library
 
 # Author: Michael Grünewald
-# Date: Fri Oct 17 13:50:39 CEST 2014
+# Date: Thu Nov 20 10:19:26 CET 2014
 
 # BSD Owl Scripts (https://github.com/michipili/bsdowl)
 # This file is part of BSD Owl Scripts
@@ -14,13 +14,21 @@
 # are also available at
 # http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.txt
 
+LIBRARY=		rational
 
-SUBDIR=		test_program
-SUBDIR+=	test_library
-SUBDIR+=	test_complex
-SUBDIR+=	test_toplevel
-SUBDIR+=	test_binding
+APIVERSION=		1
+LIBVERSION=		${APIVERSION}.0.0
 
-.include "generic.subdir.mk"
+SRCS=			rational.h
+SRCS+=			rational_trace.h
+SRCS+=			rational_trace.c
+SRCS+=			rational_operation.c
+SRCS+=			rational_print.c
 
-### End of file `Makefile'
+MAN=			librational.3
+
+DIRS=			${TESTSRCDIR}/librational
+
+.include "langc.lib.mk"
+
+### End of file `TestLibraryStatic.mk'

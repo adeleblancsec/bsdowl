@@ -1,12 +1,12 @@
-### Makefile -- Test Suite for OCaml
+### Makefile -- Stubs for our rational arithmetic
 
 # Author: Michael Grünewald
-# Date: Fri Oct 17 13:50:39 CEST 2014
+# Date: Fri Jan  9 11:34:36 CET 2015
 
 # BSD Owl Scripts (https://github.com/michipili/bsdowl)
 # This file is part of BSD Owl Scripts
 #
-# Copyright © 2005–2014 Michael Grünewald
+# Copyright © 2005–2015 Michael Grünewald
 #
 # This file must be used under the terms of the CeCILL-B.
 # This source file is licensed as described in the file COPYING, which
@@ -14,13 +14,15 @@
 # are also available at
 # http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.txt
 
+LIBRARY=		rational_stubs
 
-SUBDIR=		test_program
-SUBDIR+=	test_library
-SUBDIR+=	test_complex
-SUBDIR+=	test_toplevel
-SUBDIR+=	test_binding
+SRCS=			rational_stubs.c
 
-.include "generic.subdir.mk"
+DIRS=			${TESTSRCDIR}/librational
+DIRS+=			/usr/local/lib/ocaml
+
+.PATH: ${TESTSRCDIR}/librational
+
+.include "langc.lib.mk"
 
 ### End of file `Makefile'
